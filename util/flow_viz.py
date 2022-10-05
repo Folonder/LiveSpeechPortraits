@@ -75,8 +75,8 @@ def flow_uv_to_colors(u, v, convert_to_bgr=False):
     According to the Matlab source code of Deqing Sun
 
     Args:
-        u (np.ndarray): Input horizontal flow of shape [H,W]
-        v (np.ndarray): Input vertical flow of shape [H,W]
+        u (np.ndarray): input1 horizontal flow of shape [H,W]
+        v (np.ndarray): input1 vertical flow of shape [H,W]
         convert_to_bgr (bool, optional): Convert output image to BGR. Defaults to False.
 
     Returns:

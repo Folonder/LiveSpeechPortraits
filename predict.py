@@ -34,7 +34,7 @@ class Predictor(BasePredictor):
     def setup(self):
         self.parser = argparse.ArgumentParser()
         self.parser.add_argument('--id', default='May', help="person name, e.g. Obama1, Obama2, May, Nadella, McStay")
-        self.parser.add_argument('--driving_audio', default='data/Input/00083.wav', help="path to driving audio")
+        self.parser.add_argument('--driving_audio', default='data/input1/00083.wav', help="path to driving audio")
         self.parser.add_argument('--save_intermediates', default=0, help="whether to save intermediate results")
 
     def predict(self, 

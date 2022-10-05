@@ -59,7 +59,7 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     device = torch.device(opt.device)
     with open(join('./config/', opt.id + '.yaml')) as f:
-        config = yaml.load(f)
+        config = yaml.safe_load(f)
     data_root = join('./data/', opt.id)
     # create the results folder
     audio_name = os.path.split(opt.driving_audio)[1][:-4]
@@ -147,7 +147,7 @@ if __name__ == '__main__':
                             config['model_params']['APC']['hidden_size'],
                             config['model_params']['APC']['num_layers'],
                             config['model_params']['APC']['residual'])
-    APC_model.load_state_dict(torch.load(config['model_params']['APC']['ckp_path']), strict=False)
+    APC_model.load_state_dict(torch.load(config['model_params']['APC']['ckp_path'], map_location=torch.device('cpu')), strict=False)
     if opt.device == 'cuda':
         APC_model.cuda() 
     APC_model.eval()
